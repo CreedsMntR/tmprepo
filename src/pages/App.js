@@ -17,7 +17,7 @@ function App() {
         setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
     };
 
-    // Return value this is a test
+    // Return value
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             <div id={theme}>
