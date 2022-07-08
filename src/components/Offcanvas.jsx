@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Dropdown2 from './Dropdown';
 
@@ -11,11 +11,11 @@ function ParametersCanvas() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="secondary" onClick={handleShow}>
                 Parameters
             </Button>
 
-            <Offcanvas placement="end" show={show} onHide={handleClose}>
+            <Offcanvas className="barParams" placement="end" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title className="paramTitle">
                         Parameters

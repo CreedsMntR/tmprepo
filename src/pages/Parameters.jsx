@@ -10,7 +10,8 @@ const Params = () => {
     return (
         <ThemeContext.Provider
             value={{ theme, toggleTheme }}
-        ></ThemeContext.Provider>
+        >
+        </ThemeContext.Provider>
     );
 };
 

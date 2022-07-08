@@ -1,42 +1,34 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import * as FaIcons from "react-icons/fa"
-import * as AiIcons from "react-icons/ai"
-import { SidebarData } from './SidebarData'
+import React from 'react';
+import { slide as Menu } from 'react-burger-menu';
 
 function Sidebar() {
-    const [sidebar, setSidebar] = useState(false);
+  return (
+    <Menu isOpen='false'>
+      <a className="menu-item" href="/">
+        Home
+      </a>
 
-    const showSidebar = () => setSidebar(!sidebar);
+      <a className="menu-item" href="/laravel">
+        Laravel
+      </a>
 
-    return (
-    <>
-        <div className='sidebar'>
-            <Link to="#" className='menu-bars'>
-                <FaIcons.FaBars onClick={showSidebar}/>
-            </Link>
-        </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-            <ul className='nav-menu-items'>
-                <li className='navbar-toggle'>
-                    <Link to="#" className='menu-bars'>
-                        <AiIcons.AiOutlineClose />
-                    </Link>
-                </li>
-                {SidebarData.map((item, index) => {
-                    return (
-                        <li key={index} className={item.className}>
-                            <Link to={item.path} className='nav-text'>
-                                {item.icon}
-                                <span>{item.title}</span>
-                            </Link>
-                        </li>
-                    )
-                })}
-            </ul>
-        </nav>
-    </>
-  )
-}
+      <a className="menu-item" href="/angular">
+        Angular
+      </a>
 
-export default Sidebar
+      <a className="menu-item" href="/react">
+        React
+      </a>
+
+      <a className="menu-item" href="/vue">
+        Vue
+      </a>
+
+      <a className="menu-item" href="/node">
+        Node
+      </a>
+    </Menu>
+  );
+};
+
+export default Sidebar;
